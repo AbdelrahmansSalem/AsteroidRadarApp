@@ -54,6 +54,7 @@ fun bindImageOfToday(imageView: ImageView,pictureOfDay: PictureOfDay?){
         error(R.drawable.asteroid_hazardous).
         fit().
         into(imageView)
+        imageView.contentDescription=R.string.image_of_the_day.toString()
     }
 
 }
@@ -62,9 +63,12 @@ fun bindImageOfToday(imageView: ImageView,pictureOfDay: PictureOfDay?){
 fun bindPotentiallyHazardous(imageView: ImageView,asteroid: Asteroid){
     if (asteroid.isPotentiallyHazardous){
         imageView.setImageResource(R.drawable.ic_status_potentially_hazardous)
+        imageView.contentDescription=R.string.potentially_hazardous_asteroid_image.toString()
     }
     else{
         imageView.setImageResource(R.drawable.ic_status_normal)
+        imageView
+            .contentDescription=R.string.not_hazardous_asteroid_image.toString()
     }
 
 }
